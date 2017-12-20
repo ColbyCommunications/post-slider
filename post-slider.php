@@ -39,7 +39,7 @@ function post_slider(){
                 ));
             ?>
             <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
-                <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' ); ?>
+                <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_id()), 'large' ); ?>
                 <div class="postslider-item item-<?php echo $counter++; ?> <?php if ($counter == 1) echo 'currentSlide'; ?>" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.6)),url('<?php echo $thumb['0'];?>')">
                     <div class="postslider-item-content">
                         <p class="postslider-heading" ><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
