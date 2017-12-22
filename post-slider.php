@@ -17,7 +17,7 @@ function post_slider_assets() {
     wp_enqueue_style('post_slider_styles');
 
     // Register scripts
-    wp_register_script( 'post_slider_scripts', plugins_url('js/scripts.js', __FILE__), array('jquery'),'1.1', true);
+    wp_register_script( 'post_slider_scripts', plugins_url('js/scripts.js', __FILE__), array(),'1.1', true);
     wp_enqueue_script('post_slider_scripts');
 }
 add_action( 'wp_enqueue_scripts','post_slider_assets');
