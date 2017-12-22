@@ -33,6 +33,7 @@ function post_slider(){
                 $getThisMany = 3; // Number of posts to pull
                 $recentPosts = new WP_Query(array(
                     'showposts' => $getThisMany, 
+                    'meta_key' => '_thumbnail_id', // Only get posts with a featured image
                     'offset' => 0,  // Set this to 1 to skip over first post, 2 to skip the first two, etc.
                     'order' => 'DESC', // Puts new posts first, to put oldest posts first, change to 'ASC'
                     'post__not_in' => get_option("sticky_posts"), // Ignore sticky posts for this particular query
@@ -47,7 +48,7 @@ function post_slider(){
                         <a class="postslider-button" href="<?php the_permalink(); ?>">Read More</a>
                     </div>
                 </div>
-            <?php endwhile; wp_reset_query(); ?>
+            <?php endwhile; wp_reset_postdata(); ?>
         </div>
         <span class="arrow arrow-prev"></span>
         <span class="arrow arrow-next"></span>
