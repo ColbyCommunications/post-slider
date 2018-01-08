@@ -99,21 +99,21 @@ function post_slider() {
 <div class="postslider">
 	<div class="postslider-inner">
 		<?php while ( $recent_posts->have_posts() ) : ?>
-			<?php $recent_posts->the_post(); ?>
-			<div class="<?php post_slider_item_class( $counter ); ?>"
-				style="<?php post_slider_item_style( get_post_slider_thumb_url() ); ?>">
-				<div class="postslider-item-content">
-					<p class="postslider-heading" >
-						<a href="<?php the_permalink(); ?>">
-							<?php the_title(); ?>
-						</a>
-					</p>
-					<?php the_excerpt(); ?>
-					<a class="postslider-button" href="<?php the_permalink(); ?>">
-						Read More
+		<?php $recent_posts->the_post(); ?>
+		<div class="<?php post_slider_item_class( $counter ); ?>"
+			style="<?php post_slider_item_style( get_post_slider_thumb_url() ); ?>">
+			<div class="postslider-item-content">
+				<p class="postslider-heading" >
+					<a href="<?php the_permalink(); ?>">
+						<?php the_title(); ?>
 					</a>
-				</div>
+				</p>
+				<?php the_excerpt(); ?>
+				<a class="postslider-button" href="<?php the_permalink(); ?>">
+					Read More
+				</a>
 			</div>
+		</div>
 		<?php endwhile; ?>
 	</div>
 	<span class="arrow arrow-prev"></span>

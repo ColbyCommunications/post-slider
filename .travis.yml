@@ -2,5 +2,4 @@ language: php
 php:
   - '5.6'
   - '7.1'
-scripts:
-  - composer lint
+scripts: composer lint
