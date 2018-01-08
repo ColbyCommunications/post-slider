@@ -1,0 +1,21 @@
+{
+  "name": "colbylibraries/post-slider",
+  "description":
+    "WordPress plugin that creates a slideshow using the featured image, title, excerpt, and link from the three most recent posts.",
+  "type": "wordpress-plugin",
+  "scripts": {
+    "lint": "phpcs --extensions=php -s",
+    "fix": "phpcbf --extensions=php"
+  },
+  "authors": [
+    {
+      "name": "Mike Jandreau",
+      "email": "mike.jandreau@colby.edu"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.0@dev",
+    "wp-coding-standards/wpcs": "dev-master"
+  }
+}
