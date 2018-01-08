@@ -49,6 +49,7 @@ function post_slider_item_class( &$counter ) {
 /**
  * Creates the WP_Query to retreive slider posts.
  *
+ * @param int $get_this_many The number of posts to query.
  * @return WP_Query The query.
  */
 function get_post_slider_query( $get_this_many = 3 ) {
@@ -91,8 +92,8 @@ function get_post_slider_thumb_url() {
  * @return string The rendered HTML.
  */
 function post_slider() {
-	$counter = 0; // Counter for posts.
-	$recent_posts  = get_post_slider_query();
+	$counter      = 0; // Counter for posts.
+	$recent_posts = get_post_slider_query();
 
 	ob_start(); ?>
 
