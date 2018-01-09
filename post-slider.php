@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:  Post Slider
+ * Plugin Name:  Colby Libraries / Post Slider
  * Plugin URI:   https://github.com/mikejandreau/post-slider
  * Description:  Plugin to display recent post excerpts as a slideshow. Simply add [post_slider] to the content area in WordPress.
  * Version:      1.0
@@ -14,6 +14,8 @@
 
 namespace ColbyLibraries\PostSlider;
 
+define( __NAMESPACE__ . '\VERSION', '1.0' );
+
 add_action( 'wp_enqueue_scripts', 'ColbyLibraries\\PostSlider\\post_slider_assets' );
 add_shortcode( 'post_slider', 'ColbyLibraries\\PostSlider\\post_slider' );
 
@@ -22,12 +24,23 @@ add_shortcode( 'post_slider', 'ColbyLibraries\\PostSlider\\post_slider' );
  */
 function post_slider_assets() {
 	// Register styles.
-	wp_register_style( 'post_slider_styles', plugins_url( 'css/styles.css', __FILE__ ) );
-	wp_enqueue_style( 'post_slider_styles' );
+	wp_register_style(
+		'colbylibraries/post-slider',
+		plugins_url( 'dist/post-slider.css', __FILE__ ),
+		array(),
+		__NAMESPACE__ . '\VERSION'
+	);
+	wp_enqueue_style( 'colbylibraries/post-slider' );
 
 	// Register scripts.
-	wp_register_script( 'post_slider_scripts', plugins_url( 'js/scripts.js', __FILE__ ), array(), '1.1', true );
-	wp_enqueue_script( 'post_slider_scripts' );
+	wp_register_script(
+		'colbylibraries/post-slider',
+		plugins_url( 'dist/post-slider.js', __FILE__ ),
+		array(),
+		__NAMESPACE__ . '\VERSION',
+		true
+	);
+	wp_enqueue_script( 'colbylibraries/post-slider' );
 }
 
 /**
