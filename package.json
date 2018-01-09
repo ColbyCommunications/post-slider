@@ -1,8 +1,8 @@
 {
   "scripts": {
     "start": "parcel js/post-slider.js",
-    "build": "parcel build js/post-slider.js",
-    "build-css": "postcss css/post-slider.css -d dist",
+    "build": "parcel build src/js/post-slider.js",
+    "build-css": "postcss src/css/post-slider.css -d dist",
     "deploy": "node node_modules/node-autodeploy-wp",
     "lint": "eslint src/js",
     "stylelint": "stylelint css --fix"
