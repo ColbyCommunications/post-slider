@@ -1,9 +1,6 @@
 // Post Slider
 // Version: 1.0
 
-// Import CSS for bundling.
-require('../css/styles.css');
-
 // Variables
 var postslider = document.querySelector('.postslider');
 var numberOfSlides = document.querySelectorAll(
